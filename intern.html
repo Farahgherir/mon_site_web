@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Expériences Erasmus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Farah GHERIR</h1>
+        </div>
+        <div class="header-center">
+            <h2>Bienvenue dans mon site</h2>
+        </div>
+        <div class="header-right">
+            <div class="menu">
+                <div class="menu-icon">☰</div> <!-- Icône de menu -->
+                <ul class="menu-list">
+                    <li><a href="index.html">Menu principal</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="#carriere">Carrière</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="intern.html">Expériences internationales</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="erasmus-experiences">
+        <div class="erasmus-wrapper">
+            <!-- Section Allemagne -->
+            <div class="erasmus-item" id="germany">
+                <div class="erasmus-content">
+                    <div class="image-container">
+                        <img src="images/allemagne.jpg" alt="Photo Allemagne">
+                    </div>
+                    <div class="text-container">
+                        <h2>Allemagne</h2>
+                        <p>J'ai eu l'occasion d'étudier et de vivre en Allemagne pendant un semestre. Cela m'a permis de découvrir une culture riche et d'améliorer mes compétences linguistiques en allemand.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Italie -->
+            <div class="erasmus-item" id="italy">
+                <div class="erasmus-content">
+                    <div class="image-container">
+                        <img src="images/italie.jpg" alt="Photo Italie">
+                    </div>
+                    <div class="text-container">
+                        <h2>Italie</h2>
+                        <p>Mon séjour en Italie m'a permis de découvrir la langue et la culture italienne, tout en étudiant à Rome, une ville au patrimoine historique incroyable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section France -->
+            <div class="erasmus-item" id="france">
+                <div class="erasmus-content">
+                    <div class="image-container">
+                        <img src="images/france.jpg" alt="Photo France">
+                    </div>
+                    <div class="text-container">
+                        <h2>France</h2>
+                        <p>En France, j'ai approfondi ma maîtrise du français tout en étudiant à Paris, une ville dynamique et un véritable centre culturel et académique.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Section Suisse -->
+            <div class="erasmus-item" id="switzerland">
+                <div class="erasmus-content">
+                    <div class="image-container">
+                        <img src="images/suisse.jpg" alt="Photo Suisse">
+                    </div>
+                    <div class="text-container">
+                        <h2>Suisse</h2>
+                        <p>J'ai eu la chance d'étudier et de travailler en Suisse, ce qui m'a permis de découvrir une culture unique, un cadre naturel magnifique et d'améliorer mes compétences linguistiques en français et en allemand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flèches de navigation -->
+        <div class="arrow-container">
+            <button class="arrow-btn left" onclick="rotateExperience('prev')">←</button>
+            <button class="arrow-btn right" onclick="rotateExperience('next')">→</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Farah GHERIR. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        let currentExperience = 0;
+        const experiences = document.querySelectorAll('.erasmus-item');
+        const totalExperiences = experiences.length;
+
+        // Masquer toutes les expériences sauf la première au chargement
+        window.onload = () => {
+            experiences.forEach((experience, index) => {
+                if (index !== 0) {
+                    experience.classList.remove('active');
+                } else {
+                    experience.classList.add('active');
+                }
+            });
+        };
+
+        // Fonction pour faire pivoter les expériences
+        function rotateExperience(direction) {
+            experiences[currentExperience].classList.remove('active'); // Masquer l'expérience actuelle
+            if (direction === 'next') {
+                currentExperience = (currentExperience + 1) % totalExperiences;
+            } else {
+                currentExperience = (currentExperience - 1 + totalExperiences) % totalExperiences;
+            }
+            experiences[currentExperience].classList.add('active'); // Afficher la nouvelle expérience
+        }
+    </script>
+</body>
+</html>

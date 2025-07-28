@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9; /* Couleur de fond actuelle */
+    background-color: hwb(0 100% 0%); /* Couleur de fond actuelle */
     /* Ajoute un fond image ou un dégradé ici */
     background-image: url('images/background.jpg'); /* Image de fond */
     background-size: cover; /* L'image couvre toute la fenêtre */
@@ -11,35 +11,146 @@ body {
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
 }
 
-menu {
-    position: absolute; /* Positionnement absolu pour placer le menu en haut à gauche */
-    top: 20px;
-    left: 20px;
+
+/* Section des tâches / compétences */
+.task {
+    padding: 40px;
+    margin-top: 30px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Donne une largeur spécifique à la section */
+    margin-left: 10%; /* Centre la section avec un léger décalage à gauche */
 }
 
-
-/* Header */
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.task h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
+.task ul {
+    list-style-type: none; /* Supprime les puces */
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.task ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
-nav ul li a {
+.task ul li:before {
+    content: "✓"; /* Ajoute une coche devant chaque élément */
+    margin-right: 10px;
+    color: #4CAF50; /* Couleur de la coche */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Espace entre les sections */
+    align-items: center; /* Centrer verticalement */
+    padding: 3%;
+    background-color: #496b85;
     color: white;
-    text-decoration: none;
+    flex-direction: column; /* On change l'orientation pour empiler les éléments */
+    position: relative; /* Nécessaire pour positionner le titre en bas */
+    height: 40%; /* Ajuster la hauteur du header si nécessaire */
+}
+/* Titre principal centré */
+.header-title {
+    position: absolute;   /* Pour positionner la div contenant le titre de manière absolue */
+    top: 15%;               /* Place la div en haut de la page */
+    left: 50%;            /* Centre la div horizontalement */
+    transform: translateX(-50%); /* Centre parfaitement la div */
+    width: 100%;          /* S'assure que la div occupe toute la largeur de la page */
+    text-align: center;   /* Centre le texte à l'intérieur de la div */
+}
+
+.site-title {
+    font-size: 50px;      /* Taille du titre */
+    font-weight: bold;    /* Titre en gras */
+    margin: 0;            /* Enlève les marges par défaut */
+}
+/* Nom à droite en petit et en italique */
+.header-left .name {
+    font-size: 14px; /* Petit texte */
+    font-style: italic; /* En italique */
+    color: #f4f4f9; /* Couleur claire */
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Positionne le nom à gauche en haut */
+}
+
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.menu-list li {
+    font-size: 16px;
+    font-weight: normal;
+    color: #f4f4f9;
+}
+
+.menu-list {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.menu-list li a:hover {
+    color: #00bcd4; /* Change la couleur au survol */
+}
+
+.menu:hover .menu-list {
+    display: block; /* Afficher le menu au survol */
+}
+
+/* Section Présentation */
+.presentation {
+    background-color: #ffffff; /* Fond blanc */
+    padding: 10%; /* Réduit l'espace autour du contenu */
+    /* border: 2px solid #ffffff;  */ /* Supprime la bordure */
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    margin-right: 10px; /* Réduit l'espacement entre l'image et le texte */
+    position: relative;
+    padding: 5px; /* Réduit l'espacement autour de l'image */
+}
+
+.photo {
+    border-radius: 50%;
+    width: 200px; /* Taille de la photo */
+    height: 200px; /* Taille de la photo */
+    object-fit: cover; /* Pour que l'image soit bien centrée dans le cercle */
+}
+
+.description {
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+.description h3 {
+    font-size: 24px; /* Taille du titre */
+    margin: 0;
+}
+
+.description p {
+    font-size: 18px; /* Taille du texte */
+    color: #666; /* Couleur du texte */
+    margin-top: 10px;
 }
 
 /* Sections */
@@ -57,4 +168,430 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Style pour la section des projets */
+#projets {
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.projet {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projet h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.projet p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projet h4 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.projet ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projet ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projet-images {
+    display: flex;
+    justify-content: center; /* Centre les images horizontalement */
+    align-items: center; /* Centre verticalement si elles ont des tailles différentes */
+    gap: 20px; /* Espace entre les images */
+    margin-top: 20px;
+}
+
+.grande-image {
+    max-width: 600px; /* Image plus grande */
+    height: auto; /* Garder les proportions */
+}
+
+.petite-image {
+    max-width: 650px; /* Image plus petite */
+    height: auto; /* Garder les proportions */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centre la vidéo horizontalement */
+    align-items: center;     /* Centre la vidéo verticalement */
+    height: 100%;           /* Prend la hauteur complète de la fenêtre */
+}
+
+.project-media-container {
+    display: flex;               /* Utilise Flexbox pour aligner les éléments côte à côte */
+    justify-content: center;     /* Centre les éléments horizontalement */
+    align-items: center;         /* Centre les éléments verticalement */
+    gap: 20px;                   /* Ajoute un espace entre l'image et la vidéo */
+}
+
+.project-media-container img,
+.project-media-container video {
+    max-width: 100%;             /* L'image et la vidéo ne dépasseront pas la largeur de leur conteneur */
+    height: auto;                /* Garde les proportions */
+    max-height: 300px;           /* Vous pouvez ajuster cette hauteur pour garder l'image/vidéo d'une taille raisonnable */
+}
+
+
+.project-image-container img {
+    max-width: 200px; /* Limite la largeur maximale à 500px */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-image-container2 img {
+    max-width: 700px; /* Limite la largeur maximale à 500px */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-video-container video {
+    max-width: 100%;
+    max-height: 300px; /* Ajuste la hauteur de la vidéo */
+    border-radius: 8px;
+}
+
+.project-link {
+    display: inline; /* Cela fait que le lien et le texte soient sur la même ligne */
+    margin-left: 5px; /* Ajoute un léger espace entre "Site du projet" et le lien */
+}
+
+/* CV */
+#cv {
+    padding: 40px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cv-header h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cv-content h3 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.cv-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cv-content ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.cv-download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cv-download-btn:hover {
+    background-color: #45a049;
+}
+
+/* Adds more space between each section */
+.cv-item {
+    margin-bottom: 20px; /* Increases space between sections */
+}
+
+/* Align dates to the right */
+.cv-item p {
+    text-align: right;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Optional: Style for the list items in experiences */
+.cv-item ul {
+    margin-top: 5px;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+
+/* Logo de langue à droite */
+.header-right {
+    display: flex;
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+    align-items: center;
+    gap: 15px; /* Espacement entre les logos et le menu */
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Met le menu dans le coin droit en haut */
+}
+
+.language-logo {
+    width: 30px; /* Taille des logos */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Style général pour la page Contact */
+#contact {
+    padding: 40px;
+    background-color: #fff; /* Fond blanc pour la page de contact */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le titre "Contact" */
+#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style pour la description sous le titre */
+#contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Liste des contacts */
+#contact ul {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0;
+}
+
+/* Style des éléments de la liste */
+#contact ul li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Style pour les liens dans la section Contact */
+#contact a {
+    color: #4CAF50; /* Vert pour les liens */
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #333; /* Change la couleur du lien au survol */
+    text-decoration: underline;
+}
+
+/* Style pour les icônes (optionnel si tu veux en ajouter) */
+#contact li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Réajustement du footer si nécessaire */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Assurer que le footer reste sous le contenu */
+    width: 100%;
+}
+
+
+/* Section principale Erasmus */
+
+
+/* Style pour chaque expérience Erasmus */
+/* Modifier la forme et la taille de la "bulle" */
+.erasmus-item {
+    width: 600px;  /* Augmenter la largeur */
+    height: 350px; /* Ajuster la hauteur */
+    background: #fff;
+    border-radius: 10px; /* Bordures arrondies mais non circulaires */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Centrer correctement */
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 1s ease-out;
+}
+
+
+
+
+.text-container h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.text-container p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Flèches de navigation */
+.arrow-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.arrow-btn {
+    font-size: 48px; /* Augmenter la taille des flèches */
+    color: #4CAF50;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    transform: scale(1.2); /* Agrandir au survol */
+    color: #333; /* Changer la couleur au survol */
+}
+
+/* Flèche de gauche */
+.left {
+    position: absolute;
+    left: 20px; /* Décalage un peu plus à droite */
+}
+
+/* Flèche de droite */
+.right {
+    position: absolute;
+    right: 30px; /* Décalage un peu plus à gauche */
+}
+
+
+/* Section principale Erasmus avec effet de bulle */
+#erasmus-experiences {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+}
+
+.erasmus-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Utiliser toute la largeur de la bulle */
+    padding: 20px;
+}
+
+.erasmus-item:nth-child(odd) .image-container {
+    order: 2;
+}
+
+.erasmus-item:nth-child(even) .image-container {
+    order: 1;
+}
+
+.erasmus-item img {
+    width: 120px; /* Ajuster la taille de l'image */
+    height: 120px; /* Garder la proportion carrée ou ajuster à votre préférence */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Style du texte à l'intérieur de la bulle */
+.text-container {
+    flex: 2;
+    padding-left: 20px;
+}
+
+
+.text-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px); /* Flottement plus marqué */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+.erasmus-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.erasmus-item.active {
+    left: 50%; /* Centrer l'élément activé */
+    transform: translateX(-50%) translateY(0px);
+    opacity: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+.erasmus-item.previous {
+    transform: translateX(-100vw); /* Fait partir la bulle à gauche */
+}
+
+.erasmus-item.next {
+    transform: translateX(100vw); /* Fait partir la bulle à droite */
+}
+
+.profile-photo {
+    width: 200px; /* Taille plus grande de l'image */
+    height: 200px; /* Taille plus grande de l'image */
+    border-radius: 50%; /* Rendre l'image circulaire */
+    object-fit: cover; /* Ajuster l'image pour qu'elle reste proportionnée */
 }

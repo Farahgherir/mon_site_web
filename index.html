@@ -3,26 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV - [Ton Nom]</title>
+    <title>Mon CV - Farah GHERIR</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur le site de [Ton Nom]</h1>
-        <!-- Menu -->
-        <div class="menu">
-            <div class="menu-icon">...</div> <!-- Les trois petits points -->
-            <ul class="menu-list">
-                <li><a href="#projet">Projets</a></li>
-                <li><a href="#carriere">Carrière</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#presentation">Présentation</a></li>
-            </ul>
+        
+        <!-- Titre principal centré en bas du bordereau -->
+        <div class="header-title">
+            <h1 class="site-title">Welcome to my website</h1> <!-- Titre centré en anglais -->
         </div>
-    </header>    
+        <!-- Nom "Farah GHERIR" en haut à gauche -->
+        <div class="header-left">
+            <h2 class="name">Farah GHERIR</h2> <!-- Nom en italique et petit -->
+        </div>
     
+        <!-- Menu avec les logos de langue à gauche -->
+        <div class="header-right">
+            <div class="language-menu">
+                <!-- Logos pour la sélection de la langue -->
+                <a href="index.html"><img src="france-logo.png" alt="Français" class="language-logo"></a> <!-- Logo France -->
+                <a href="index_en.html"><img src="english-logo.png" alt="English" class="language-logo"></a> <!-- Logo Anglais -->
+            </div>
+    
+            <!-- Menu déroulant -->
+            <div class="menu">
+                <div class="menu-icon">☰</div> <!-- Icône du menu -->
+                <ul class="menu-list">
+                    <li><a href="index.html">Main Menu</a></li>
+                    <li><a href="projets.html">Projects</a></li>
+                    <li><a href="#carriere">Career</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="#avis">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="intern.html">International Experience</a></li>
+                </ul>
+            </div>
+        </div>
+    
+    </header>
+    
+    
+    
+    
+
+    <!-- Section de présentation avec photo et description -->
+    <section id="presentation" class="presentation">
+    <div class="image-container">
+        <img src="C:\Users\farah\OneDrive\Bureau\mon_site_web\farah_photo.jpg" alt="Farah Photo" class="profile-photo">
+    </div>
+    <div class="description">
+        <h3>Coucou, moi c'est Farah</h3>
+        <p>Bienvenue dans mon monde ! Je suis ravi(e) de te faire découvrir mon univers.</p>
+    </div>
+</section>
+
+
+    <!-- Nouvelle section pour énumérer les tâches, en dessous de la photo -->
+    <section id="task" class="task">
+        <h2>Ce que je suis capable de faire</h2>
+        <ul>
+            <li>Écrire et rédiger des rapports</li>
+            <li>Faire plein de choses</li>
+            <li>Faire plein d'autres choses</li>
+            <li>Encore plus de choses</li>
+        </ul>
+    </section>
+
     <section id="cv">
         <h2>Mon CV</h2>
         <p>Voici mon parcours, mes compétences et mes expériences professionnelles.</p>
@@ -36,7 +83,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 [Ton Nom]. Tous droits réservés.</p>
+        <p>&copy; 2025 Farah GHERIR. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
